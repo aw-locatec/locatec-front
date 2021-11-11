@@ -1,5 +1,5 @@
 /**
- * 여러군데서 사용되는 상수 관리. 
+ * 여러군데서 사용되는 상수 관리.
  */
 import { Platform } from "react-native";
 import { Region } from "react-native-maps";

@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
@@ -12,6 +11,7 @@ import Navigation from "./navigation";
 import Loading from "./components/elements/Loading";
 import { clearSnackbar } from "./modules/snackbar";
 import { DARK, LIGHT } from "./types";
+import AppInit from "./AppInit";
 
 // 리덕스 사용
 const store = createStore(
@@ -40,7 +40,7 @@ export function App() {
    const dispatch = useDispatch();
 
    return (
-      <View style={{ height: "100%", width: "100%" }}>
+      <AppInit>
          <Navigation colorScheme={colorScheme} />
          <Loading />
          <SnackBar
@@ -58,6 +58,6 @@ export function App() {
             }}
          />
          <StatusBar style={colorScheme === LIGHT ? DARK : LIGHT} />
-      </View>
+      </AppInit>
    );
 }

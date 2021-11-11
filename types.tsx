@@ -26,3 +26,23 @@ export const LIGHT = "light" as const;
 export const DARK = "dark" as const;
 
 export type ThemeScheme = typeof LIGHT | typeof DARK;
+
+//좌표 타입
+export type CoordType = {
+   latitude: number;
+   longitude: number;
+};
+
+/* 
+   위치 데이터 타입
+*/
+export const SMOKE = "smoking" as const;
+export const TRASHCAN = "trash" as const;
+
+export type LocationType = typeof SMOKE | typeof TRASHCAN;
+
+export type MarkerType = {
+   type: LocationType;
+   coords: { latitude: number; longitude: number };
+   image: string;
+};

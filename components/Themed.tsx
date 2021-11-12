@@ -9,6 +9,8 @@ import {
    Icon as DefaultIcon,
    Button as DefaultButton,
    ButtonProps,
+   SpeedDialProps,
+   SpeedDial as DefaultSpeedDial,
 } from "react-native-elements";
 import useThemeColor from "../hooks/useThemeColor";
 
@@ -22,6 +24,8 @@ export type ViewProps = ThemeProps & DefaultView["props"];
 
 export type ThemedIconProps = ThemeProps & IconProps;
 export type ThemedButtonProps = ThemeProps & ButtonProps & { color?: string };
+export type ThemedSpeedDialProps = ThemeProps &
+   SpeedDialProps & { color?: string; actions?: ButtonProps[] };
 
 // themed elements 정의
 export function Text(props: TextProps) {
@@ -107,5 +111,48 @@ export function Button(props: ThemedButtonProps) {
          })()}
          {...otherProps}
       />
+   );
+}
+
+export function SpeedDial(props: ThemedSpeedDialProps) {
+   const {
+      style,
+      lightColor,
+      darkColor,
+      color,
+      buttonStyle,
+      containerStyle,
+      actions,
+      ...otherProps
+   } = props;
+
+   const backgroundColor = useThemeColor(
+      { light: lightColor, dark: darkColor },
+      "buttonBackground"
+   );
+
+   return (
+      <DefaultSpeedDial
+         buttonStyle={[
+            buttonStyle,
+            { backgroundColor: color ? color : backgroundColor },
+         ]}
+         containerStyle={containerStyle}
+         style={style}
+         {...otherProps}>
+         {actions?.map((item, idx) => (
+            <DefaultSpeedDial.Action
+               {...item}
+               key={idx}
+               buttonStyle={[
+                  {
+                     backgroundColor: color ? color : backgroundColor,
+                  },
+                  item.buttonStyle,
+               ]}
+               containerStyle={item.containerStyle}
+            />
+         ))}
+      </DefaultSpeedDial>
    );
 }

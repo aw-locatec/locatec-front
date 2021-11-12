@@ -13,6 +13,7 @@ import isTwoRegionSame from "../../../utils/isTwoRegionSame";
 import makeGoogleIcon from "../../../utils/makeGoogleIcon";
 import { View } from "../../Themed";
 import LeftBottomButtons from "../elements/LeftBottomButtons";
+import RightBottomSpeedDial from "../elements/RightBottomSpeedDial";
 
 type Props = {
    mapViewRef: React.RefObject<MapView>;
@@ -21,6 +22,9 @@ type Props = {
    markerImages: any | undefined;
    myLocation: MyLocationType;
    locationType: LocationType;
+   isOpen: boolean;
+   toggleIsOpen: () => void;
+   changeLocationType: (v: LocationType) => void;
    onPressMarker: (v: CoordType) => void;
    onAnimateRegion: AnimateRegionType;
    goToReport: () => void;
@@ -34,6 +38,9 @@ function Main({
    markerImages,
    myLocation,
    locationType,
+   isOpen,
+   toggleIsOpen,
+   changeLocationType,
    onPressMarker,
    onAnimateRegion,
    goToReport,
@@ -119,6 +126,12 @@ function Main({
                animateToClosest={animateToClosest}
             />
          </View>
+         <RightBottomSpeedDial
+            isOpen={isOpen}
+            locationType={locationType}
+            toggleIsOpen={toggleIsOpen}
+            changeLocationType={changeLocationType}
+         />
       </View>
    );
 }

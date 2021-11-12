@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import MapView, { Region } from "react-native-maps";
 import { useSelector } from "react-redux";
 import { deltas } from "../../../constants/Constants";
@@ -21,6 +21,7 @@ function MainContainer({ navigation }: RootStackScreenProps<"Main">) {
    const mapViewRef = useRef<MapView>() as React.RefObject<MapView>; // 지도 reference
    const markers = useSelector(({ markers }: RootState) => markers); // 리덕스에 저장된 마커 불러들이기
    const myLocation = useSelector(({ myLocation }: RootState) => myLocation); // 현재 유저의 위치
+   const [isOpen, setIsOpen] = useState<boolean>(false); // 오른쪽 하단 speedDial이 열려있는지 닫혀있는지
 
    const [region, setRegion] = useState<Region>(myLocation.region); // 화면 중심 region
 
@@ -108,6 +109,16 @@ function MainContainer({ navigation }: RootStackScreenProps<"Main">) {
       }
    };
 
+   // 우측하단 speedDial 버튼 열기 닫기 함수
+   const toggleIsOpen = useCallback(() => {
+      setIsOpen((prev) => !prev);
+   }, []);
+   // speedDial 을 열었을 때 나오는 버튼을 눌렀을 때 호출됨. 보여줄 marker를 바꿈
+   const changeLocationType = (v: LocationType) => {
+      setLocationType(v);
+      setIsOpen(false);
+   };
+
    return (
       <Main
          myLocation={myLocation}
@@ -116,6 +127,9 @@ function MainContainer({ navigation }: RootStackScreenProps<"Main">) {
          region={region}
          mapViewRef={mapViewRef}
          locationType={locationType}
+         isOpen={isOpen}
+         toggleIsOpen={toggleIsOpen}
+         changeLocationType={changeLocationType}
          onPressMarker={onPressMarker}
          onAnimateRegion={onAnimateRegion}
          goToReport={goToReport}

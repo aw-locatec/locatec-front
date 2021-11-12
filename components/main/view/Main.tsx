@@ -1,11 +1,18 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import MapView, { Marker, Region } from "react-native-maps";
+import { deltas } from "../../../constants/Constants";
 import { MyLocationType } from "../../../modules/myLocation";
-import { CoordType, LocationType, MarkerType } from "../../../types";
+import {
+   AnimateRegionType,
+   CoordType,
+   LocationType,
+   MarkerType,
+} from "../../../types";
 import isTwoRegionSame from "../../../utils/isTwoRegionSame";
 import makeGoogleIcon from "../../../utils/makeGoogleIcon";
 import { View } from "../../Themed";
+import LeftBottomButtons from "../elements/LeftBottomButtons";
 
 type Props = {
    mapViewRef: React.RefObject<MapView>;
@@ -15,6 +22,9 @@ type Props = {
    myLocation: MyLocationType;
    locationType: LocationType;
    onPressMarker: (v: CoordType) => void;
+   onAnimateRegion: AnimateRegionType;
+   goToReport: () => void;
+   animateToClosest: () => void;
 };
 
 function Main({
@@ -25,6 +35,9 @@ function Main({
    myLocation,
    locationType,
    onPressMarker,
+   onAnimateRegion,
+   goToReport,
+   animateToClosest,
 }: Props) {
    return (
       <View style={{ flex: 1 }}>
@@ -35,7 +48,23 @@ function Main({
                region={region}
                style={styles.map}
                defaultZoom={18}
-               options={{ disableDefaultUI: true }}>
+               options={{ disableDefaultUI: true }}
+               onRegionChangeComplete={(v) => {
+                  onAnimateRegion({ ...v, ...deltas });
+               }}
+               onPress={() => {
+                  /**
+                   * 웹에서는 callout이 안되어 등록된 사진을 보여줄때
+                   * 현재 region과 marker의 위치가 같으면 사진을 보여주는데
+                   * 사진을 닫기 위해서는 지도를 이동시켜야함.
+                   * 이는 불편하므로, 지도의 아무곳이나 클릭했을떄
+                   * 티나지 않을만큼 아주 조금만 위도를 이동시켜 사진을 닫게한다.
+                   */
+                  onAnimateRegion({
+                     ...region,
+                     latitude: region.latitude - 0.0000000000001,
+                  });
+               }}>
                {
                   // 유저 위치에 마커 보여주기. 학교 밖이면 보여주지 않음.
                   // 웹에서는 누르면 그 곳으로 지도의 중심을 이동하도록 onPress 이벤트를 등록함
@@ -85,6 +114,10 @@ function Main({
                         ))
                }
             </MapView>
+            <LeftBottomButtons
+               goToReport={goToReport}
+               animateToClosest={animateToClosest}
+            />
          </View>
       </View>
    );

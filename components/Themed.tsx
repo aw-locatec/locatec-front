@@ -4,7 +4,12 @@
 
 import * as React from "react";
 import { Text as DefaultText, View as DefaultView } from "react-native";
-import { IconProps, Icon as DefaultIcon } from "react-native-elements";
+import {
+   IconProps,
+   Icon as DefaultIcon,
+   Button as DefaultButton,
+   ButtonProps,
+} from "react-native-elements";
 import useThemeColor from "../hooks/useThemeColor";
 
 // themed elements 의 Props 타입 선언
@@ -16,6 +21,7 @@ export type TextProps = ThemeProps & DefaultText["props"];
 export type ViewProps = ThemeProps & DefaultView["props"];
 
 export type ThemedIconProps = ThemeProps & IconProps;
+export type ThemedButtonProps = ThemeProps & ButtonProps & { color?: string };
 
 // themed elements 정의
 export function Text(props: TextProps) {
@@ -50,6 +56,55 @@ export function Icon(props: ThemedIconProps) {
       <DefaultIcon
          tvParallaxProperties={undefined}
          color={color}
+         {...otherProps}
+      />
+   );
+}
+
+export function Button(props: ThemedButtonProps) {
+   const {
+      lightColor,
+      darkColor,
+      color,
+      buttonStyle,
+      type,
+      titleStyle,
+      ...otherProps
+   } = props;
+   const backgroundColor = useThemeColor(
+      { light: lightColor, dark: darkColor },
+      "buttonBackground"
+   );
+   const titleColor = useThemeColor(
+      { light: lightColor, dark: darkColor },
+      "buttonTitle"
+   );
+
+   const font = {
+      fontFamily: "notosans",
+   };
+
+   return (
+      <DefaultButton
+         type={type}
+         titleStyle={[font, titleStyle]}
+         {...(() => {
+            if (type === "clear") {
+               return {
+                  titleStyle: [{ color: titleColor, ...font }, titleStyle],
+               };
+            } else {
+               return {
+                  buttonStyle: [
+                     {
+                        backgroundColor: color ? color : backgroundColor,
+                        height: 50,
+                     },
+                     buttonStyle,
+                  ],
+               };
+            }
+         })()}
          {...otherProps}
       />
    );

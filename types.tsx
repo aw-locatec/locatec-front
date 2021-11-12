@@ -4,6 +4,7 @@
  * 한군데서만 사용되는 타입은 그 파일 또는 폴더에 저장함.
  */
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { Region } from "react-native-maps";
 
 // navigation 관련 타입들 선언
 declare global {
@@ -46,3 +47,13 @@ export type MarkerType = {
    coords: { latitude: number; longitude: number };
    image: string;
 };
+
+/* react-native-map 의 MapView에서 onRegionChangeComplete 이벤트 콜백함수의 props 타입*/
+export type AnimateRegionType = (
+   reg: Region,
+   details?:
+      | {
+           isGesture: boolean;
+        }
+      | undefined
+) => void;

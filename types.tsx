@@ -4,6 +4,7 @@
  * 한군데서만 사용되는 타입은 그 파일 또는 폴더에 저장함.
  */
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ImagePickerResult } from "react-native";
 import { Region } from "react-native-maps";
 
 // navigation 관련 타입들 선언

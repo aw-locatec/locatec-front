@@ -58,3 +58,8 @@ export type AnimateRegionType = (
         }
       | undefined
 ) => void;
+
+// launchImageLibraryAsync 함수 결과 타입
+export type ImageLibraryReturn =
+   | (ImagePickerResult & { uri?: string; base64?: string })
+   | null;

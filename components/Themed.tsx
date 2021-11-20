@@ -11,6 +11,8 @@ import {
    ButtonProps,
    SpeedDialProps,
    SpeedDial as DefaultSpeedDial,
+   ListItemProps,
+   ListItem as DefaultListItem,
 } from "react-native-elements";
 import useThemeColor from "../hooks/useThemeColor";
 
@@ -26,6 +28,7 @@ export type ThemedIconProps = ThemeProps & IconProps;
 export type ThemedButtonProps = ThemeProps & ButtonProps & { color?: string };
 export type ThemedSpeedDialProps = ThemeProps &
    SpeedDialProps & { color?: string; actions?: ButtonProps[] };
+export type ThemedListItemProps = ThemeProps & ListItemProps;
 
 // themed elements 정의
 export function Text(props: TextProps) {
@@ -154,5 +157,23 @@ export function SpeedDial(props: ThemedSpeedDialProps) {
             />
          ))}
       </DefaultSpeedDial>
+   );
+}
+
+export function ListItem(props: ThemedListItemProps) {
+   const { lightColor, darkColor, containerStyle, children, ...otherProps } =
+      props;
+
+   const backgroundColor = useThemeColor(
+      { light: lightColor, dark: darkColor },
+      "background"
+   );
+
+   return (
+      <DefaultListItem
+         containerStyle={[containerStyle, { backgroundColor: backgroundColor }]}
+         {...otherProps}>
+         {children}
+      </DefaultListItem>
    );
 }

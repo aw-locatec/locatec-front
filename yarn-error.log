@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-step-indicator @types/react-native-step-indicator
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @types/modal-react-native-web
 
 PATH: 
   C:\Users\gpfqp\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\gpfqp\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\jdk13.0.2\bin;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\110\Tools\Binn;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn;C:\Program Files\Microsoft SQL Server\100\Tools\Binn;C:\Program Files\Microsoft SQL Server\100\DTS\Binn;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn;C:\Program Files (x86)\Yarn\bin;C:\ProgramData\chocolatey\bin;E:\anaconda3;E:\anaconda3\Library;E:\anaconda3\Scripts;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Windows\System32\OpenSSH;C:\Program Files\Docker\Docker;C:\Program Files\Git\cmd;C:\Program Files\PuTTY;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;F:\android-studio-sdk;F:\android-studio-sdk\platform-tools;C:\Program Files\nodejs;F:\android-studio-sdk\tools;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;F:\Ruby27-x64\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\gpfqp\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\gpfqp\AppData\Local\Programs\Python\Python39;C:\Users\gpfqp\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-9.0.4\bin;C:\Users\gpfqp\AppData\Local\atom\bin;C:\Users\gpfqp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gpfqp\AppData\Local\GitHubDesktop\bin;C:\Users\gpfqp\AppData\Local\Yarn\bin;E:\venvs;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\gpfqp\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\DataGrip 2021.1.1\bin;C:\Users\gpfqp\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2freact-native-step-indicator: Not found
+  Error: https://registry.yarnpkg.com/@types%2fmodal-react-native-web: Not found
       at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66097:18)
       at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
       at Request.emit (node:events:394:28)
@@ -45,6 +45,7 @@ npm manifest:
         "@react-native-async-storage/async-storage": "^1.15.11",
         "@react-navigation/native": "^6.0.6",
         "@react-navigation/native-stack": "^6.2.5",
+        "@types/react-native-material-menu": "^1.0.6",
         "@types/react-redux": "^7.1.20",
         "@types/redux-logger": "^3.0.9",
         "expo": "~43.0.0",
@@ -52,10 +53,12 @@ npm manifest:
         "expo-asset": "~8.4.3",
         "expo-constants": "~12.1.3",
         "expo-font": "~10.0.3",
+        "expo-image-picker": "^11.0.3",
         "expo-linking": "^2.4.2",
         "expo-location": "~13.0.4",
         "expo-status-bar": "~1.1.0",
         "lottie-react-native": "^4.1.3",
+        "modal-react-native-web": "^0.2.0",
         "patch-package": "^6.4.7",
         "postinstall-postinstall": "^2.1.0",
         "react": "17.0.1",
@@ -64,8 +67,10 @@ npm manifest:
         "react-native-elements": "^3.4.2",
         "react-native-gesture-handler": "^1.10.3",
         "react-native-maps": "0.28.0",
+        "react-native-material-menu": "^2.0.0",
         "react-native-reanimated": "^2.2.4",
         "react-native-safe-area-context": "^3.3.2",
+        "react-native-step-indicator": "^1.0.3",
         "react-native-vector-icons": "^9.0.0",
         "react-native-web": "0.17.1",
         "react-native-web-maps": "^0.3.0",
@@ -1793,6 +1798,14 @@ Lockfile:
     version "1.5.5"
     resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.5.tgz#75a2a8e7d8ab4b230414505d92335d1dcb53a6df"
     integrity sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==
+  
+  "@types/react-native-material-menu@^1.0.6":
+    version "1.0.6"
+    resolved "https://registry.yarnpkg.com/@types/react-native-material-menu/-/react-native-material-menu-1.0.6.tgz#953dd6cfce18baee9930290e7926b12f5b6676e7"
+    integrity sha512-qGqqRo5a74n3jB+9wvtW7m+qriqFWpg0JnbpHIir9g39FxRFxe71b7M0WOMdsC2ue5I/OeyJLaCmwXKUFk3zug==
+    dependencies:
+      "@types/react" "*"
+      "@types/react-native" "*"
   
   "@types/react-native-vector-icons@^6.4.6":
     version "6.4.9"
@@ -4090,6 +4103,15 @@ Lockfile:
     dependencies:
       expo-modules-core "~0.4.4"
       fontfaceobserver "^2.1.0"
+  
+  expo-image-picker@^11.0.3:
+    version "11.0.3"
+    resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-11.0.3.tgz#c0b6cb9b5fa027f1bd1879a879fe13157f31ac94"
+    integrity sha512-s7nXB+hop5htcETlSvtPhEGE6RM4BX0G2e6mhr2SjJdJPAFn+hY7R3vCGBFMtxV11Gjzr0D1w2y9gDqhOj0GKg==
+    dependencies:
+      "@expo/config-plugins" "^4.0.2"
+      expo-modules-core "~0.4.4"
+      uuid "7.0.2"
   
   expo-keep-awake@~10.0.0:
     version "10.0.0"
@@ -6464,6 +6486,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mockdate/-/mockdate-3.0.5.tgz#789be686deb3149e7df2b663d2bc4392bc3284fb"
     integrity sha512-iniQP4rj1FhBdBYS/+eQv7j1tadJ9lJtdzgOpvsOHng/GbcDh2Fhdeq+ZRldrPYdXvCyfFUmFeEwEGXZB5I/AQ==
   
+  modal-react-native-web@^0.2.0:
+    version "0.2.0"
+    resolved "https://registry.yarnpkg.com/modal-react-native-web/-/modal-react-native-web-0.2.0.tgz#5daaa76213218fd25df739a267b11aed37e8c0c2"
+    integrity sha512-sC0/jL3ZL4bGtv1VS43TnrH7/FHUqgb7IU3VYWNDzuR223fYlpG5Gc974GsTP172Vi+lnnBL/G70xONmaggxeQ==
+    dependencies:
+      warning "^4.0.1"
+  
   move-concurrently@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -7819,6 +7848,11 @@ Lockfile:
     dependencies:
       "@types/geojson" "^7946.0.7"
   
+  react-native-material-menu@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/react-native-material-menu/-/react-native-material-menu-2.0.0.tgz#139f407a52fbc0d47e5351d50ac769e05812da5c"
+    integrity sha512-SmO9PLE3E469EPbVWZqvdu6JGPPZIm7YjqDcWs2PPoY0k7w2V9tFo3BmmLXNzNZDCVCAi+PPSsL7h/5WkfHcSg==
+  
   react-native-ratings@8.0.4:
     version "8.0.4"
     resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-8.0.4.tgz#efd5ebad8acc08bf98d34d39b18fb7a6813ef991"
@@ -7852,6 +7886,11 @@ Lockfile:
     version "0.3.1"
     resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.3.1.tgz#24d0cfc335a2c730f6d58bd7b43ea5a41be4b49f"
     integrity sha512-mKOfBLIBFBcs9br1rlZDvxD5+mAl8Gfr5CounwJtxI6Z82rGrMO+Kgl9EIg3RMVf3G855a85YVqHJL2f5EDRlw==
+  
+  react-native-step-indicator@^1.0.3:
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/react-native-step-indicator/-/react-native-step-indicator-1.0.3.tgz#d136ec88639485a338c8ce281035aefd9d169f8f"
+    integrity sha512-WwTb6lpJl0T7MV59sus1utoEQuqbuWHq6V0R0iDWmlPRFjM0qirhTNTS5on1+V9Qmc9dsUCT380/mRgDF+U6zw==
   
   react-native-vector-icons@^9.0.0:
     version "9.0.0"
@@ -9389,6 +9428,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
     integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
   
+  uuid@7.0.2:
+    version "7.0.2"
+    resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.2.tgz#7ff5c203467e91f5e0d85cfcbaaf7d2ebbca9be6"
+    integrity sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw==
+  
   uuid@^3.3.2, uuid@^3.4.0:
     version "3.4.0"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
@@ -9435,6 +9479,13 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
     integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
+    dependencies:
+      loose-envify "^1.0.0"
+  
+  warning@^4.0.1:
+    version "4.0.3"
+    resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+    integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
     dependencies:
       loose-envify "^1.0.0"
   

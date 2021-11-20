@@ -17,4 +17,6 @@ export type ReportViewProps = {
    goPrev: () => void;
    onPressMap: (coord: CoordType) => void;
    settingAddPhoto: (v: boolean) => void;
+   gotoHome: () => void;
+   gotoReport: () => void;
 };

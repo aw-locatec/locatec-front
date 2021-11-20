@@ -18,7 +18,7 @@ import * as ImagePicker from "expo-image-picker";
 import Alert from "../../elements/Alert";
 import { changePhotoContent } from "../../../constants/Strings";
 
-function ReportContainer({}: RootStackScreenProps<"Report">) {
+function ReportContainer({ navigation }: RootStackScreenProps<"Report">) {
    const [position, setPosition] = useState<number>(0); // 현재 페이지
    const mapViewRef = useRef<MapView>() as React.RefObject<MapView>; // 지도 reference
    const pagerRef = useRef<FlatList>() as React.RefObject<FlatList>; // 페이지 reference
@@ -118,6 +118,22 @@ function ReportContainer({}: RootStackScreenProps<"Report">) {
       dispatch(unloading());
    };
 
+   // 메인 화면으로 이동
+   const gotoHome = () => {
+      scrollToIndex(0);
+      navigation.navigate("Main");
+   };
+
+   // 초기 추가요청 화면으로 이동 및 초기화
+   const gotoReport = () => {
+      // 초기화
+      setPhoto(null);
+      setAddPhoto(false);
+      setLocationType(SMOKE);
+      // 이동
+      scrollToIndex(0);
+   };
+
    /**
     * 다음 페이지, 이전 페이지 이동 함수
     */
@@ -150,6 +166,8 @@ function ReportContainer({}: RootStackScreenProps<"Report">) {
          goNext={goNext}
          goPrev={goPrev}
          onPressMap={onPressMap}
+         gotoReport={gotoReport}
+         gotoHome={gotoHome}
       />
    );
 }

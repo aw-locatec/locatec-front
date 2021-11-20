@@ -6,6 +6,7 @@ import { View } from "../../Themed";
 import NaviButtons from "../elements/naviButtons";
 import StepIndicator from "../elements/StepIndicator";
 import { ReportViewProps } from "../types";
+import Complete from "./Complete";
 import Info from "./Info";
 import Map from "./Map";
 
@@ -24,6 +25,8 @@ function Report({
    goNext,
    goPrev,
    onPressMap,
+   gotoHome,
+   gotoReport,
 }: ReportViewProps) {
    const layout = useLayout();
 
@@ -39,6 +42,7 @@ function Report({
          addPhoto={addPhoto}
          settingAddPhoto={settingAddPhoto}
       />,
+      <Complete gotoHome={gotoHome} gotoReport={gotoReport} />,
    ];
 
    return (

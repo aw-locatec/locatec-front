@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/locatec-main-front/static/js/app.1036d06d.chunk.js",
-    "app.js.map": "/locatec-main-front/static/js/app.1036d06d.chunk.js.map",
+    "app.js": "/locatec-main-front/static/js/app.29f34f5a.chunk.js",
+    "app.js.map": "/locatec-main-front/static/js/app.29f34f5a.chunk.js.map",
     "runtime~app.js": "/locatec-main-front/static/js/runtime~app.e1dde77f.js",
     "runtime~app.js.map": "/locatec-main-front/static/js/runtime~app.e1dde77f.js.map",
-    "static/js/2.7c70bcbd.chunk.js": "/locatec-main-front/static/js/2.7c70bcbd.chunk.js",
-    "static/js/2.7c70bcbd.chunk.js.map": "/locatec-main-front/static/js/2.7c70bcbd.chunk.js.map",
+    "static/js/2.72a47683.chunk.js": "/locatec-main-front/static/js/2.72a47683.chunk.js",
+    "static/js/2.72a47683.chunk.js.map": "/locatec-main-front/static/js/2.72a47683.chunk.js.map",
     "fonts/AntDesign.ttf": "/locatec-main-front/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/locatec-main-front/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/locatec-main-front/./fonts/Feather.ttf",
@@ -25,7 +25,7 @@
     "index.html": "/locatec-main-front/index.html",
     "manifest.json": "/locatec-main-front/manifest.json",
     "serve.json": "/locatec-main-front/serve.json",
-    "static/js/2.7c70bcbd.chunk.js.LICENSE.txt": "/locatec-main-front/static/js/2.7c70bcbd.chunk.js.LICENSE.txt",
+    "static/js/2.72a47683.chunk.js.LICENSE.txt": "/locatec-main-front/static/js/2.72a47683.chunk.js.LICENSE.txt",
     "static/media/bell.png": "/locatec-main-front/static/media/bell.cf04af27.png",
     "static/media/heart.png": "/locatec-main-front/static/media/heart.23b5c2c0.png",
     "static/media/map_marker.png": "/locatec-main-front/static/media/map_marker.a53685b6.png",
@@ -37,7 +37,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.e1dde77f.js",
-    "static/js/2.7c70bcbd.chunk.js",
-    "static/js/app.1036d06d.chunk.js"
+    "static/js/2.72a47683.chunk.js",
+    "static/js/app.29f34f5a.chunk.js"
   ]
 }

@@ -4,12 +4,12 @@ import * as Linking from "expo-linking";
 import { RootStackParamList } from "../types";
 
 const linking: LinkingOptions<RootStackParamList> = {
-   prefixes: [Linking.makeUrl("/")],
+   prefixes: ["https://aw-locatec.github.io"],
    config: {
       screens: {
-         Main: "main",
-         Report: "report",
-         NotFound: "*",
+         Main: "locatec-main-front/",
+         Report: "locatec-main-front/report",
+         NotFound: "locatec-main-front/notfound",
       },
    },
 };

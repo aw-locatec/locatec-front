@@ -1,12 +1,15 @@
 {
    "main": "node_modules/expo/AppEntry.js",
+   "homepage": "https://aw-locatec.github.io/locatec-main-front",
    "scripts": {
       "start": "expo start",
       "android": "expo start --android",
       "ios": "expo start --ios",
       "web": "expo start --web",
       "eject": "expo eject",
-      "postinstall": "patch-package"
+      "postinstall": "patch-package",
+      "predeploy": "expo build:web",
+      "deploy": "gh-pages -d web-build"
    },
    "jest": {
       "preset": "jest-expo"

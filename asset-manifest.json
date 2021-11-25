@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/locatec-main-front/static/js/app.75aaf977.chunk.js",
-    "app.js.map": "/locatec-main-front/static/js/app.75aaf977.chunk.js.map",
+    "app.js": "/locatec-main-front/static/js/app.1036d06d.chunk.js",
+    "app.js.map": "/locatec-main-front/static/js/app.1036d06d.chunk.js.map",
     "runtime~app.js": "/locatec-main-front/static/js/runtime~app.e1dde77f.js",
     "runtime~app.js.map": "/locatec-main-front/static/js/runtime~app.e1dde77f.js.map",
     "static/js/2.7c70bcbd.chunk.js": "/locatec-main-front/static/js/2.7c70bcbd.chunk.js",
@@ -38,6 +38,6 @@
   "entrypoints": [
     "static/js/runtime~app.e1dde77f.js",
     "static/js/2.7c70bcbd.chunk.js",
-    "static/js/app.75aaf977.chunk.js"
+    "static/js/app.1036d06d.chunk.js"
   ]
 }

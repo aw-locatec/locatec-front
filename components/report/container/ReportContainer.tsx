@@ -17,6 +17,7 @@ import Report from "../view/Report";
 import * as ImagePicker from "expo-image-picker";
 import Alert from "../../elements/Alert";
 import { changePhotoContent } from "../../../constants/Strings";
+import { sendRequestApi } from "../../../api/requestList";
 
 function ReportContainer({ navigation }: RootStackScreenProps<"Report">) {
    const [position, setPosition] = useState<number>(0); // 현재 페이지
@@ -109,6 +110,8 @@ function ReportContainer({ navigation }: RootStackScreenProps<"Report">) {
             longitude: region.longitude,
             image: addPhoto ? photo?.base64 : null,
          };
+
+         await sendRequestApi(obj);
          // 서버 요청
          goNext();
       } catch (e) {

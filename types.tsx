@@ -4,6 +4,7 @@
  * 한군데서만 사용되는 타입은 그 파일 또는 폴더에 저장함.
  */
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ImageInfo } from "expo-image-picker/build/ImagePicker.types";
 import { ImagePickerResult } from "react-native";
 import { Region } from "react-native-maps";
 
@@ -49,6 +50,13 @@ export type MarkerType = {
    image: string;
 };
 
+export type MarkerServerDataType = {
+   type: LocationType;
+   latitude: string;
+   longitude: string;
+   imageUrl: string;
+};
+
 /* react-native-map 의 MapView에서 onRegionChangeComplete 이벤트 콜백함수의 props 타입*/
 export type AnimateRegionType = (
    reg: Region,
@@ -60,6 +68,4 @@ export type AnimateRegionType = (
 ) => void;
 
 // launchImageLibraryAsync 함수 결과 타입
-export type ImageLibraryReturn =
-   | (ImagePickerResult & { uri?: string; base64?: string })
-   | null;
+export type ImageLibraryReturn = ({ cancelled?: boolean } & ImageInfo) | null;

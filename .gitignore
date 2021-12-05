@@ -15,3 +15,5 @@ web-build/
 
 web
 app.json
+
+firebaseconfig.js
